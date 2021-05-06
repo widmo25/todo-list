@@ -1,10 +1,11 @@
 .section{
     max-width: 1000px;
     background-color:#fff;
-    padding:20px;
+    padding:20px 0;
     margin-bottom: 10px;;
 }
 
 .section__head{
     border-bottom:2px solid #eee;
+    padding:20px;
 }
