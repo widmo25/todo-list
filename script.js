@@ -9,6 +9,8 @@
         });
         render();
     }
+
+
     
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -24,7 +26,9 @@
         for (const task of tasks) {
             htmlString += `
                 <li>
+                    <button class=\"list__button js-done\">✔</button>
                     ${task.content}
+                    <button class=\"list__button js-remove\">🗑</button>
                 </li>
             `;
         };
