@@ -25,10 +25,10 @@
         let htmlString = "";
         for (const task of tasks) {
             htmlString += `
-                <li>
+                <li class=\"list__item\">
                     <button class=\"list__button js-done\">✔</button>
-                    ${task.content}
-                    <button class=\"list__button js-remove\">🗑</button>
+                    <p class=\"list__task\">${task.content}</p>
+                    <button class=\"list__button list__button--higligthed js-remove\">🗑</button>
                 </li>
             `;
         };
