@@ -18,6 +18,11 @@
    padding-left: 10px;
    font-size:18px;
 }
+
+.list__task--done{
+   text-decoration: line-through;
+}
+
 .list__button{
    flex-basis: 20px;
    padding:10px;
