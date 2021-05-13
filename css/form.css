@@ -7,15 +7,29 @@
 }
 
 .form__input {
-    width: 100%;
     padding:10px;
     border:1px solid #a5a1a1;
 }
 
 .form__button {
-    width: 100%;
     background-color: #008080;
     color:#fff;
     border:none;
     font-size:22px;
+    padding: 10px;;
+}
+
+@media (max-width:567px){
+    .form{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .form__input{
+        width: 100%;
+    }
+
+    .form__button{
+        width: 100%;
+    }
 }
