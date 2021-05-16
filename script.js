@@ -15,7 +15,7 @@
         render();
     };
 
-    const toggleTaskDone = (index,) => {
+    const toggleTaskDone = (index) => {
         tasks[index].done = !tasks[index].done;
 
         render();
