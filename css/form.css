@@ -7,39 +7,37 @@
 }
 
 .form__input {
-    padding:10px;
-    border:1px solid #a5a1a1;
+    padding: 10px;
+    border: 1px solid #a5a1a1;
 }
 
 .form__button {
     background-color: #008080;
-    color:#fff;
-    border:none;
-    font-size:22px;
-    padding: 10px;;
+    color: #fff;
+    border: none;
+    font-size: 22px;
+    padding: 10px;
+    ;
 }
 
-.form__button:hover{
-    background-color:hsl(180, 99%, 35%);
+.form__button:hover {
+    background-color: #01b2b2;
     cursor: pointer;
 }
 
-.form__button:active{
-    background-color:hsl(180, 99%, 35%);
+.form__button:active {
+    background-color: #01b2b2;
 }
 
-
-@media (max-width:567px){
-    .form{
+@media (max-width:567px) {
+    .form {
         display: flex;
         flex-wrap: wrap;
     }
-    
-    .form__input{
+    .form__input {
         width: 100%;
     }
-
-    .form__button{
+    .form__button {
         width: 100%;
     }
 }
