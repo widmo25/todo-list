@@ -1,7 +1,5 @@
 {
-    const tasks = [
-
-    ];
+    const tasks = [];
 
     const addNewTask = (newTaskContent) => {
         tasks.push({
@@ -25,7 +23,7 @@
         newTask.focus();
     }
 
-    const bindEvents = () =>{
+    const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
         removeButtons.forEach((removeButton, index) => {
             removeButton.addEventListener("click", () => {
@@ -52,7 +50,7 @@
         addNewTask(newTaskContent);
         clearInput(newTask);
     };
-    
+
     const render = () => {
         let htmlString = "";
         for (const task of tasks) {
