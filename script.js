@@ -1,15 +1,19 @@
 {
-    const tasks = [];
+    let tasks = [];
 
     const addNewTask = (newTaskContent) => {
-        tasks.push({
-            content: newTaskContent,
-        });
+        tasks = [
+            ...tasks,
+            { content: newTaskContent },
+        ]
         render();
     };
 
     const removeTask = (index) => {
-        tasks.splice(index, 1);
+        tasks = [
+            
+            tasks.splice(index)
+        ]
         render();
     };
 
