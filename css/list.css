@@ -30,6 +30,7 @@
    color: white;
    border: none;
    align-self: center;
+   transition: 1s;
 }
 
 .list__button:hover {
