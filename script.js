@@ -76,8 +76,7 @@
                     </button>
                 </li>
             `
-        )
-        htmlTasks.join();
+        ).join("")
         document.querySelector(".js-task").innerHTML = htmlTasks
     }
 
