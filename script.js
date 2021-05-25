@@ -1,6 +1,6 @@
 {
     let tasks = [];
-    
+
     const addNewTask = (newTaskContent) => {
         tasks = [
             ...tasks,
@@ -61,24 +61,28 @@
         clearInput(newTask);
     };
 
-    const render = () => {
-        let htmlString = "";
-        for (const task of tasks) {
-            htmlString += `
-                <li class=\"list__item\">
+    const renderTask = () => {
+        let htmlTasks = tasks.map(({ content, done }) =>
+            `
+            <li class=\"list__item\">
                     <button class=\"list__button js-done\">
-                      ${task.done ? "✔" : ""}
+                      ${done ? "✔" : ""}
                      </button>
-                    <p class=\"list__task\ ${task.done ? "list__task--done" : ""}\">
-                      ${task.content}
+                    <p class=\"list__task\ ${done ? "list__task--done" : ""}\">
+                      ${content}
                     </p>
                     <button class=\"list__button list__button--higligthed js-remove\">
                       🗑
                     </button>
                 </li>
-            `;
-        };
-        document.querySelector(".js-task").innerHTML = htmlString;
+            `
+        )
+        htmlTasks.join();
+        document.querySelector(".js-task").innerHTML = htmlTasks
+    }
+
+    const render = () => {
+        renderTask();
         bindEvents();
     };
 
