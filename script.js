@@ -87,13 +87,13 @@
         }
         else {
             buttonList = `
-            <li class=\"list__item\">
-                <button class=\"list__button\">
+            <li class=\"hiddenList__item\">
+                <button class=\"hiddenList__button\">
                     Ukryj ukończone
                 </button>
             </li>
-            <li class=\"list__item\">
-                <button class=\"list__button\">
+            <li class=\"hiddenList__item\">
+                <button class=\"hiddenList__button\">
                     Ukoncz Wszystkie
                 </button>
             </li>
