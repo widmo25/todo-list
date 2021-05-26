@@ -1,0 +1,4 @@
+.hiddenList{
+    display:flex;
+    flex-direction:row;
+}
