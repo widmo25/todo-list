@@ -22,7 +22,7 @@
         const task = tasks[taskIndex];
         tasks = [
             ...tasks.slice(0, taskIndex),
-            { ...task, done: !task.done},
+            { ...task, done: !task.done },
             ...tasks.slice(taskIndex + 1),
         ];
         render();
@@ -47,6 +47,22 @@
                 toggleTaskDone(index);
             });
         });
+    }
+
+    const allTaskDone = () => {
+        tasks = tasks.map(task  => ({
+            ...task,
+            done: true,
+        }));
+        render();
+    };
+
+    const bindButtonsEvent = () => {
+        
+        const allTaskDoneButton = document.querySelector(".js-allDoneButton");
+        if (allTaskDoneButton) {
+            allTaskDoneButton.addEventListener("click", (allTaskDone))
+        }
     }
 
     const onFormSubmit = (event) => {
@@ -88,12 +104,12 @@
         else {
             buttonList = `
             <li class=\"hiddenList__item\">
-                <button class=\"hiddenList__button\">
+                <button class=\"hiddenList__button js-hideDoneButton\">
                     Ukryj ukończone
                 </button>
             </li>
             <li class=\"hiddenList__item\">
-                <button class=\"hiddenList__button\">
+                <button class=\"hiddenList__button js-allDoneButton\">
                     Ukoncz Wszystkie
                 </button>
             </li>
@@ -106,6 +122,7 @@
         renderTasks();
         renderButtons(hideDoneTasks);
         bindEvents();
+        bindButtonsEvent();
     };
 
     const init = () => {
