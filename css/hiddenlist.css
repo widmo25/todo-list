@@ -22,6 +22,10 @@
     color: #01b2b2;
 }
 
+.hiddenList__button:disabled{
+    color:#dddf;
+}
+
 @media (max-width:767px) {
     .hiddenList {
         flex-wrap: wrap;
