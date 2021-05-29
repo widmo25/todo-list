@@ -17,7 +17,7 @@
     border: none;
     font-size: 22px;
     padding: 10px;
-    transition: 1s;
+    transition: color 1s;
 }
 
 .form__button:hover {

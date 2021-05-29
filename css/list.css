@@ -22,6 +22,10 @@
    text-decoration: line-through;
 }
 
+.list__item--hidden{
+   display:none;
+}
+
 .list__button {
    flex-basis: 35px;
    flex-shrink: 0;
@@ -30,7 +34,7 @@
    color: white;
    border: none;
    align-self: center;
-   transition: 1s;
+   transition: background-color 1s;
 }
 
 .list__button:hover {
