@@ -6,7 +6,6 @@
             ...tasks,
             { content: newTaskContent },
         ]
-        hideDoneTasks = true;
         render();
     };
 
@@ -27,6 +26,11 @@
         ];
         render();
     };
+
+    const toggleHideDoneTasks = () => {
+        hideDoneTasks = !hideDoneTasks;
+        render();
+    }
 
     const clearInput = (newTask) => {
         newTask.value = "";
@@ -50,7 +54,7 @@
     }
 
     const allTaskDone = () => {
-        tasks = tasks.map(task  => ({
+        tasks = tasks.map(task => ({
             ...task,
             done: true,
         }));
@@ -58,11 +62,17 @@
     };
 
     const bindButtonsEvent = () => {
-        
+
         const allTaskDoneButton = document.querySelector(".js-allDoneButton");
         if (allTaskDoneButton) {
             allTaskDoneButton.addEventListener("click", (allTaskDone))
         }
+
+        const toggleHiddenTask = document.querySelector(".js-hideDoneButton");
+        if (toggleHiddenTask) {
+            toggleHiddenTask.addEventListener("click", toggleHideDoneTasks);
+        }
+
     }
 
     const onFormSubmit = (event) => {
@@ -80,7 +90,7 @@
     const renderTasks = () => {
         let htmlTasks = tasks.map(({ content, done }) =>
             `
-            <li class=\"list__item\">
+            <li class=\"list__item ${done && hideDoneTasks ? "list__item--hidden" : ""}\">
                     <button class=\"list__button js-done\">
                       ${done ? "✔" : ""}
                      </button>
@@ -96,20 +106,20 @@
         document.querySelector(".js-task").innerHTML = htmlTasks
     }
 
-    const renderButtons = (hideDoneTasks) => {
+    const renderButtons = () => {
         let buttonList;
-        if (hideDoneTasks === false) {
+        if (!tasks.length) {
             return
         }
         else {
             buttonList = `
             <li class=\"hiddenList__item\">
                 <button class=\"hiddenList__button js-hideDoneButton\">
-                    Ukryj ukończone
+                   ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
                 </button>
             </li>
             <li class=\"hiddenList__item\">
-                <button class=\"hiddenList__button js-allDoneButton\">
+                <button class=\"hiddenList__button js-allDoneButton\" ${tasks.every(({ done }) => done) ? "disabled" : ""}>
                     Ukoncz Wszystkie
                 </button>
             </li>
@@ -120,7 +130,7 @@
 
     const render = () => {
         renderTasks();
-        renderButtons(hideDoneTasks);
+        renderButtons();
         bindEvents();
         bindButtonsEvent();
     };
