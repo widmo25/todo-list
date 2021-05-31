@@ -5,7 +5,7 @@
         tasks = [
             ...tasks,
             { content: newTaskContent },
-        ]
+        ];
         render();
     };
 
@@ -111,8 +111,7 @@
         if (!tasks.length) {
             return
         }
-        else {
-            buttonList = `
+        buttonList = `
             <li class=\"hiddenList__item\">
                 <button class=\"hiddenList__button js-hideDoneButton\">
                    ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
@@ -124,7 +123,6 @@
                 </button>
             </li>
             `
-        }
         document.querySelector(".js-buttonList").innerHTML = buttonList;
     }
 
