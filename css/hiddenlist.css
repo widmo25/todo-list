@@ -1,6 +1,5 @@
 .hiddenList {
     display: flex;
-    flex-direction: row;
     list-style-type: none;
     padding: 20px;
     grid-gap: 20px;
