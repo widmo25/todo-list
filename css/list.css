@@ -35,6 +35,7 @@
    border: none;
    align-self: center;
    transition: background-color 1s;
+   cursor: pointer;
 }
 
 .list__button:hover {
