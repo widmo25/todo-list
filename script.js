@@ -61,7 +61,7 @@
         render();
     };
 
-    const bindButtonsEvent = () => {
+    const bindEventButtons = () => {
 
         const allTaskDoneButton = document.querySelector(".js-allDoneButton");
         if (allTaskDoneButton) {
@@ -130,7 +130,7 @@
         renderTasks();
         renderButtons();
         bindEvents();
-        bindButtonsEvent();
+        bindEventButtons();
     };
 
     const init = () => {
